@@ -1,0 +1,23 @@
+{
+  "name": "testNode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avijitroy89/testNode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avijitroy89/testNode/issues"
+  },
+  "homepage": "https://github.com/avijitroy89/testNode#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
