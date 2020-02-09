@@ -18,38 +18,20 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-const courses = [
-  {id: 1, name: "learn Node"},
-  {id: 2, name: "learn Express"},
-  {id: 3, name: "learn react"}
-];
 
 // const exercisesRouter = require('./routes/exercises');
 // const usersRouter = require('./routes/users');
 
 // app.use('/exercises', exercisesRouter);
 // app.use('/users', usersRouter);
+const apiRoutes = require("./routes/api-routes");
 
 app.get('/', function (req, res) {
-  res.send(req.originalUrl);
+  res.send("Hello world");
   console.dir(req.originalUrl);
 });
 
-app.get('/api/courses/:id', function (req, res) {
-  const course = courses.find(c => c.id === parseInt(req.params.id));
-  if(!course) return res.status(404).send("Sorry there are no courses availabe with this name")
-  res.send( course);
-});
-
-app.post('/api/courses', function (req, res) {
-  // NPM jio is useful to validate, we can create schema for this
-  const course = {
-    id: courses.length+1,
-    name: req.body.name
-  };
-  courses.push(course);
-  res.send(courses);
-});
+app.use("/api", apiRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
